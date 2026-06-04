@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-word = "object-oriented programming with Python"
-# Ensure the slices correctly extract the parts and add the space if needed
-print(word[:27] + " " + word[-6:])
+str = "Python is an interpreted, interactive, object-oriented programming\ language that combines remarkable power with very clear syntax"
+str = str[39:67] + str[107:112] + str[:6]
+print(str)
