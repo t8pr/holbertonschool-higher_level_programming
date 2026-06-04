@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-str1 = "object-oriented programming"
-str2 = " with "
-str3 = "Python"
-print(str1 + str2 + str3)
+word = "object-oriented programming with Python"
+# Ensure the slices correctly extract the parts and add the space if needed
+print(word[:27] + " " + word[-6:])
