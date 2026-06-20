@@ -1,3 +1,2 @@
-# Python - Data Structures: Lists, Tuples
+# Python - Data Structures
 
-This project covers Python data structures including lists and tuples.
