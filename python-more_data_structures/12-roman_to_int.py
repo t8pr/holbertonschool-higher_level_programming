@@ -1,0 +1,20 @@
+#!/usr/bin/python3
+"""Module for roman_to_int function."""
+
+
+def roman_to_int(roman_string):
+    """Converts a Roman numeral to an integer."""
+    if not isinstance(roman_string, str):
+        return 0
+    values = {'I': 1, 'V': 5, 'X': 10, 'L': 50,
+              'C': 100, 'D': 500, 'M': 1000}
+    result = 0
+    prev = 0
+    for ch in reversed(roman_string):
+        curr = values.get(ch, 0)
+        if curr < prev:
+            result -= curr
+        else:
+            result += curr
+        prev = curr
+    return result
