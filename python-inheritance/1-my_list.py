@@ -3,6 +3,7 @@
 This module provides a custom list class that adds a print_sorted method.
 """
 
+
 class MyList(list):
     """
     MyList class inherits from the built-in list class.
