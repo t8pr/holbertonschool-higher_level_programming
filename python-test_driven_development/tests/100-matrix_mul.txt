@@ -1,0 +1,79 @@
+==============================
+Tests for matrix_mul module
+==============================
+
+Import:
+    >>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+Normal multiplication:
+    >>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+    [[7, 10], [15, 22]]
+
+Different sizes:
+    >>> matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+    [[13, 16]]
+
+m_a not a list:
+    >>> matrix_mul("hello", [[1, 2]])
+    Traceback (most recent call last):
+    TypeError: m_a must be a list
+
+m_b not a list:
+    >>> matrix_mul([[1, 2]], "hello")
+    Traceback (most recent call last):
+    TypeError: m_b must be a list
+
+m_a not list of lists:
+    >>> matrix_mul([1, 2], [[1, 2]])
+    Traceback (most recent call last):
+    TypeError: m_a must be a list of lists
+
+m_b not list of lists:
+    >>> matrix_mul([[1, 2]], [1, 2])
+    Traceback (most recent call last):
+    TypeError: m_b must be a list of lists
+
+m_a empty:
+    >>> matrix_mul([], [[1, 2]])
+    Traceback (most recent call last):
+    ValueError: m_a can't be empty
+
+m_b empty:
+    >>> matrix_mul([[1, 2]], [])
+    Traceback (most recent call last):
+    ValueError: m_b can't be empty
+
+m_a contains string:
+    >>> matrix_mul([[1, "a"]], [[1], [2]])
+    Traceback (most recent call last):
+    TypeError: m_a should contain only integers or floats
+
+m_b contains string:
+    >>> matrix_mul([[1, 2]], [[1], ["a"]])
+    Traceback (most recent call last):
+    TypeError: m_b should contain only integers or floats
+
+m_a not rectangular:
+    >>> matrix_mul([[1, 2], [3]], [[1], [2]])
+    Traceback (most recent call last):
+    TypeError: each row of m_a must be of the same size
+
+m_b not rectangular:
+    >>> matrix_mul([[1, 2]], [[1, 2], [3]])
+    Traceback (most recent call last):
+    TypeError: each row of m_b must be of the same size
+
+Can't multiply:
+    >>> matrix_mul([[1, 2]], [[1, 2]])
+    Traceback (most recent call last):
+    ValueError: m_a and m_b can't be multiplied
+
+Missing one argument:
+    >>> matrix_mul([[1, 2]])
+    Traceback (most recent call last):
+    TypeError: matrix_mul() missing 1 required positional argument: 'mb'
+
+Missing two arguments:
+    >>> matrix_mul()
+    Traceback (most recent call last):
+    TypeError: matrix_mul() missing 2 required positional arguments: 'ma' and 'mb'
