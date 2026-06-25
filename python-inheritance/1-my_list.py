@@ -8,7 +8,6 @@ class MyList(list):
     """
     MyList class inherits from the built-in list class.
     """
-
     def print_sorted(self):
         """
         Prints the list in ascending order without modifying 
