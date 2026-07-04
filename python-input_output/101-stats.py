@@ -4,7 +4,12 @@ import sys
 
 
 def print_stats(total_size, status_codes):
-    """Prints the computed statistics."""
+    """Prints the computed statistics.
+
+    Args:
+        total_size (int): The total file size accumulated.
+        status_codes (dict): Dictionary of status codes and their counts.
+    """
     print("File size: {}".format(total_size))
     for code in sorted(status_codes.keys()):
         print("{}: {}".format(code, status_codes[code]))
