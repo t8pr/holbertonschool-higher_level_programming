@@ -16,8 +16,7 @@ class Student:
         if isinstance(attrs, list) and all(isinstance(a, str) for a in attrs):
             return {k: v for k, v in self.__dict__.items() if k in attrs}
         return self.__dict__
-
     def reload_from_json(self, json):
-        """Replaces all attributes of the Student instance from a dictionary."""
+        """Replaces all attributes of the Student instance."""
         for key, value in json.items():
             setattr(self, key, value)
